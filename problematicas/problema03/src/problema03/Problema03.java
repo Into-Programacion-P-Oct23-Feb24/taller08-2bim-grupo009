@@ -20,14 +20,21 @@ public class Problema03 {
      *
      */
     public static void main(String[] args) {
+        // Declarar variables
         int tempF = 20;
-        double tempC = -1;
-        System.out.println(tempC);
-
+        double tempC;
         String acumulador = "";
-        for (int i = 0; i <= 20; i++) {
-            tempC = 5 / 9 * (tempF - 32);
+        // Iniciar el ciclo repetitivo para realizar 20 iteraciones
+
+        for (int i = 1; i <= 20; i++) {
+            // Calcular la temperatura en celsius
+
+            tempC = 5 / 9.0 * (tempF - 32);
+            // Acumular cada iteracion
+
             acumulador = String.format("%s%d°F = %.2f°C\n", acumulador, tempF, tempC);
+            // Aumentar en 4 tempF
+
             tempF += 4;
         }
         System.out.println(acumulador);

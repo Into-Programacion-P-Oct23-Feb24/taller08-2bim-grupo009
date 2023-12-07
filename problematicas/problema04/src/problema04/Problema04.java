@@ -29,19 +29,37 @@ public class Problema04 {
      */
     public static void main(String[] args) {
         String acumulador = "";
+        // Se crea un for que realize 10 iteraciones
+        
         for (int i = 1; i <= 10; i++) {
-            for (int j = 0; j < i; j++) {
-                acumulador = String.format("%s*", acumulador);
-            }
-            acumulador = String.format("%s\n", acumulador);
+            // Se crea un if para separar las 5 primeras iteraciones
+            // Si i es menor o igual a 5
             
-            if (i>=5) {
-                for (int j = 5; j < i; j--) {
-                acumulador = String.format("%s*", acumulador);
+            if (i <= 5) {
+                // Entonces se entra al ciclo for y se imprime cuantas i 
+                // se tenga en el momento
+                
+                for (int j = 1; j <= i; j++) {
+                    acumulador = String.format("%s*", acumulador);
+                }
             }
-            acumulador = String.format("%s\n", acumulador);  
+            // Se crea otro if para las ultimas 5 iteraciones
+            // Si i es mayor o igual a 6
+            
+            if (i >= 6) {
+                // Entonces se entra al ciclo for y se imprime cuantas i
+                // se tenga hasta que la condicion se cumpla
+                
+                for (int j = 10; j >= i; j--) {
+                    acumulador = String.format("%s*", acumulador);
+                }
             }
+            // Se realiza un salto de linea para continuar con la siguiente iteracion
+            
+            acumulador = String.format("%s\n", acumulador);
         }
+        // Se presenta la acumulacion
+        
         System.out.println(acumulador);
     }
 
