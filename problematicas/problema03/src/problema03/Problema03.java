@@ -12,9 +12,25 @@ public class Problema03 {
 
     /**
      * @param args the command line arguments
+     *
+     * Genere una solución en JAVA que permita presentar un reporte de 20
+     * conversiones de temperatura de Fahrenheit a Celsius. La tabla deberá
+     * comenzar con un valor Fahrenheit de 20 grados e incrementarse en valores
+     * de 4 grados. Se recomienda usar la fórmula:
+     *
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        int tempF = 20;
+        double tempC = -1;
+        System.out.println(tempC);
+
+        String acumulador = "";
+        for (int i = 0; i <= 20; i++) {
+            tempC = 5 / 9 * (tempF - 32);
+            acumulador = String.format("%s%d°F = %.2f°C\n", acumulador, tempF, tempC);
+            tempF += 4;
+        }
+        System.out.println(acumulador);
     }
-    
+
 }

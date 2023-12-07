@@ -12,9 +12,37 @@ public class Problema04 {
 
     /**
      * @param args the command line arguments
+     *
+     * Genere una solución en Java que permita presentar
+     *
+     *
+     **
+     ***
+     ****
+     *****
+     *****
+     ****
+     ***
+     **
+     *
+     *
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        String acumulador = "";
+        for (int i = 1; i <= 10; i++) {
+            for (int j = 0; j < i; j++) {
+                acumulador = String.format("%s*", acumulador);
+            }
+            acumulador = String.format("%s\n", acumulador);
+            
+            if (i>=5) {
+                for (int j = 5; j < i; j--) {
+                acumulador = String.format("%s*", acumulador);
+            }
+            acumulador = String.format("%s\n", acumulador);  
+            }
+        }
+        System.out.println(acumulador);
     }
-    
+
 }
