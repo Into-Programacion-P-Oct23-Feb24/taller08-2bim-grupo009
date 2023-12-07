@@ -17,17 +17,18 @@ public class Problema01 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US);
 
 //        String cadenaReporte = "";
+        String listadoEdades ="Listado de Edades: ";
         String nombre;
         String posicion;
         String listado = "Listado de Jugadores";
-        int sumaEdades = 0;
-//        int contadorIteraciones = 0;
-//        int contadorIteraciones1 = 1;
+        int sumaedades = 0;
+        double promedioestaturas = 0;
+        double promedioedad = 1;
         int edad;
         double estatura;
         int limite;
@@ -45,14 +46,15 @@ public class Problema01 {
             System.out.println("Ingrese la estatura del Jugador: ");
             estatura = entrada.nextDouble();
             entrada.nextLine();
+            
+            listadoEdades=String.format("%s %s",listadoEdades,edad);
+            sumaedades = sumaedades + edad;
 
-            sumaEdades = sumaEdades + edad;
-            
-            promedioEstaturas = promedioEstaturas + estatura;
-            
+            promedioestaturas = promedioestaturas + estatura;
+
             contador = contador + 1;
 
-            listado = String.format("%s\n %d. %s -%s-, edad %d, estatura %.2f\n",
+            listado = String.format("%s\n%d. %s -%s-, edad %d, estatura %.2f",
                     listado,
                     contador,
                     nombre,
@@ -61,17 +63,12 @@ public class Problema01 {
                     estatura);
 
         }
-        promedioEdad  = (double) sumaEdades / contador;
-        
-        listado  = String.format("%sPromedio de edades: %.2f\n",
-            listado, promedioEdad);
-        
-        promedioEstaturas  = (double)promedioEstaturas / contador;
-        
-        listado  = String.format("%sPromedio de Estaturas: %.2f\n",
-            listado, promedioEstaturas);
-        System.out.printf ("%s\n", listado);
+        promedioedad = (double) sumaedades / contador;
+        promedioestaturas = (double) promedioestaturas / contador;
+
+        listado = String.format("%s\n%s\nPromedio de edades: %.2f Promedio de Estaturas: %.2f",
+            listado,listadoEdades,promedioedad,promedioestaturas);
+        System.out.printf("%s\n", listado);
     }
-    
-        
+
 }
